@@ -83,7 +83,7 @@ export function CartSidebar() {
                   Subtotal
                 </span>
                 <span className="text-2xl font-bold tracking-widest">
-                  ${cartTotal.toFixed(2)}
+                  ₦{cartTotal.toLocaleString()}
                 </span>
               </div>
               <button className="w-full h-14 bg-black-solid text-white-pure hover:bg-white-pure hover:text-black-solid border border-black-solid transition-all uppercase tracking-[0.2em] text-sm font-bold">

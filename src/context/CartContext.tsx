@@ -48,7 +48,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const cartCount = items.reduce((acc, item) => acc + item.quantity, 0);
 
   const cartTotal = items.reduce((acc, item) => {
-    const price = parseFloat(item.price.replace("$", ""));
+    // Remove non-numeric characters (except dots) to parse "₦40,000" -> 40000
+    const price = parseFloat(item.price.replace(/[^\d.]/g, ""));
     return acc + price * item.quantity;
   }, 0);
 

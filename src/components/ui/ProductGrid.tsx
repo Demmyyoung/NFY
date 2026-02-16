@@ -4,12 +4,12 @@ import { useCart } from "@/context/CartContext";
 import { Plus } from "lucide-react";
 
 const products = [
-  { id: 1, name: "tee 001", price: "$40" },
-  { id: 2, name: "bottom 001", price: "$80" },
-  { id: 3, name: "cap 001", price: "$30" },
-  { id: 4, name: "hoodie 001", price: "$90" },
-  { id: 5, name: "sock 001", price: "$15" },
-  { id: 6, name: "bag 001", price: "$120" },
+  { id: 1, name: "tee 001", price: "₦40,000" },
+  { id: 2, name: "bottom 001", price: "₦80,000" },
+  { id: 3, name: "cap 001", price: "₦30,000" },
+  { id: 4, name: "hoodie 001", price: "₦90,000" },
+  { id: 5, name: "sock 001", price: "₦15,000" },
+  { id: 6, name: "bag 001", price: "₦120,000" },
 ];
 
 export function ProductGrid() {
@@ -25,7 +25,7 @@ export function ProductGrid() {
           {/* Add to Cart Overlay Button - Visible on Hover (Desktop) / Always (Mobile logic could be added) */}
           <button
             onClick={() => addToCart(product)}
-            className="absolute top-4 right-4 p-2 border border-black-solid bg-white-pure opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black-solid hover:text-white-pure z-10"
+            className="absolute top-4 right-4 p-2 border border-black-solid bg-white-pure opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity hover:bg-black-solid hover:text-white-pure z-10"
             aria-label="Add to cart"
           >
             <Plus strokeWidth={1} className="w-6 h-6" />

@@ -1,18 +1,11 @@
 "use client";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { Header } from "@/components/layout/Header";
-import { LoadingOverlay } from "@/components/ui/LoadingOverlay";
 import { ProductGrid } from "@/components/ui/ProductGrid";
-import { useState } from "react";
 
 export default function Home() {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [loadingComplete, setLoadingComplete] = useState(false);
-
   return (
     <div className="min-h-screen bg-gray-concrete text-black-solid font-orbitron selection:bg-black-solid selection:text-white-pure">
-      <LoadingOverlay onComplete={() => setLoadingComplete(true)} />
-
       <div className="flex flex-col md:flex-row min-h-screen">
         <Sidebar />
 

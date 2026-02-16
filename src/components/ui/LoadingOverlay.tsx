@@ -1,6 +1,7 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export function LoadingOverlay({ onComplete }: { onComplete: () => void }) {
   const [isVisible, setIsVisible] = useState(true);
@@ -27,7 +28,7 @@ export function LoadingOverlay({ onComplete }: { onComplete: () => void }) {
           transition={{ duration: 0.5, ease: "easeOut" }} // Phase 3
         >
           <motion.div
-            className="bg-white-pure border border-black-solid px-16 py-8"
+            className="bg-white-pure border border-black-solid px-10 py-4"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{
@@ -36,9 +37,15 @@ export function LoadingOverlay({ onComplete }: { onComplete: () => void }) {
               bounce: 0, // "smooth spring", bounce might be too bouncy, use 0 or low stiffness
             }}
           >
-            <h1 className="text-6xl font-bold tracking-tighter lowercase">
-              nyf
-            </h1>
+            <div className="relative w-48 h-16">
+              <Image
+                src="/images/Snapchat-104280209.jpg"
+                alt="nyf"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
           </motion.div>
         </motion.div>
       )}
