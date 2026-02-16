@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Orbitron } from "next/font/google";
+import { CartProvider } from "@/context/CartContext";
+import { CartSidebar } from "@/components/cart/CartSidebar";
 import "./globals.css";
 
 const orbitron = Orbitron({
@@ -20,7 +22,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${orbitron.variable} antialiased`}>{children}</body>
+      <body className={`${orbitron.variable} antialiased`}>
+        <CartProvider>
+          {children}
+          <CartSidebar />
+        </CartProvider>
+      </body>
     </html>
   );
 }
