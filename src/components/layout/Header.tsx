@@ -20,10 +20,10 @@ export function Header() {
         <div className="bg-white-pure border border-black-solid px-6 py-2 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <Link href="/" className="block relative w-24 h-8 cursor-pointer">
             <Image
-              src="/images/Snapchat-104280209.jpg"
+              src="/images/logo1.jpg"
               alt="nyf"
               fill
-              className="object-contain"
+              className="object-fill"
               priority
             />
           </Link>

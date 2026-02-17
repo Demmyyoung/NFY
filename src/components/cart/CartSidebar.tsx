@@ -2,6 +2,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Minus, Plus } from "lucide-react";
 import { useCart } from "@/context/CartContext";
+import Link from "next/link";
 
 export function CartSidebar() {
   const { isCartOpen, toggleCart, items, removeFromCart, cartTotal } =
@@ -60,12 +61,18 @@ export function CartSidebar() {
                           {item.price}
                         </span>
                       </div>
+                      <div className="flex gap-2 text-xs text-gray-500 uppercase tracking-wider mb-2">
+                        {item.size && <span>Size: {item.size}</span>}
+                        {item.color && <span>Color: {item.color}</span>}
+                      </div>
                       <div className="flex items-center justify-between mt-4">
                         <span className="text-sm text-gray-500">
                           Qty: {item.quantity}
                         </span>
                         <button
-                          onClick={() => removeFromCart(item.id)}
+                          onClick={() =>
+                            removeFromCart(item.id, item.size, item.color)
+                          }
                           className="text-xs underline hover:text-red-500 transition-colors lowercase"
                         >
                           Remove
@@ -86,9 +93,11 @@ export function CartSidebar() {
                   ₦{cartTotal.toLocaleString()}
                 </span>
               </div>
-              <button className="w-full h-14 bg-black-solid text-white-pure hover:bg-white-pure hover:text-black-solid border border-black-solid transition-all uppercase tracking-[0.2em] text-sm font-bold">
-                Checkout
-              </button>
+              <Link href="/checkout" onClick={toggleCart}>
+                <button className="w-full h-14 bg-black-solid text-white-pure hover:bg-white-pure hover:text-black-solid border border-black-solid transition-all uppercase tracking-[0.2em] text-sm font-bold">
+                  Checkout
+                </button>
+              </Link>
             </div>
           </motion.div>
         </>

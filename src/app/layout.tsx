@@ -13,6 +13,9 @@ const orbitron = Orbitron({
 export const metadata: Metadata = {
   title: "nyf",
   description: "Brutalist Wireframe E-commerce",
+  icons: {
+    icon: "/icon.jpg",
+  },
 };
 
 export default function RootLayout({

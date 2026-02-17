@@ -39,10 +39,10 @@ export function LoadingOverlay({ onComplete }: { onComplete: () => void }) {
           >
             <div className="relative w-48 h-16">
               <Image
-                src="/images/Snapchat-104280209.jpg"
+                src="/images/logo1.jpg"
                 alt="nyf"
                 fill
-                className="object-contain"
+                className="object-fill"
                 priority
               />
             </div>

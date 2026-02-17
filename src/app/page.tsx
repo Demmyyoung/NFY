@@ -16,7 +16,7 @@ export default function Home() {
 
             {/* Footer Placeholder to fill space if needed */}
             <div className="p-12 text-center border-t border-black-solid">
-              <p className="text-sm opacity-50">nyf © 2026</p>
+              <p className="text-sm opacity-50">Nfyarchive © 2025</p>
             </div>
           </main>
         </div>

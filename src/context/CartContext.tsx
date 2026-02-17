@@ -5,15 +5,25 @@ export interface CartItem {
   id: number;
   name: string;
   price: string;
+  image: string;
   quantity: number;
+  size?: string;
+  color?: string;
 }
 
 interface CartContextType {
   items: CartItem[];
   isCartOpen: boolean;
   toggleCart: () => void;
-  addToCart: (product: { id: number; name: string; price: string }) => void;
-  removeFromCart: (id: number) => void;
+  addToCart: (product: {
+    id: number;
+    name: string;
+    price: string;
+    image: string;
+    size?: string;
+    color?: string;
+  }) => void;
+  removeFromCart: (id: number, size?: string, color?: string) => void;
   cartCount: number;
   cartTotal: number;
 }
@@ -26,12 +36,26 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const toggleCart = () => setIsCartOpen((prev) => !prev);
 
-  const addToCart = (product: { id: number; name: string; price: string }) => {
+  const addToCart = (product: {
+    id: number;
+    name: string;
+    price: string;
+    image: string;
+    size?: string;
+    color?: string;
+  }) => {
     setItems((prev) => {
-      const existing = prev.find((item) => item.id === product.id);
+      const existing = prev.find(
+        (item) =>
+          item.id === product.id &&
+          item.size === product.size &&
+          item.color === product.color,
+      );
       if (existing) {
         return prev.map((item) =>
-          item.id === product.id
+          item.id === product.id &&
+          item.size === product.size &&
+          item.color === product.color
             ? { ...item, quantity: item.quantity + 1 }
             : item,
         );
@@ -41,8 +65,13 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setIsCartOpen(true); // Open cart when adding
   };
 
-  const removeFromCart = (id: number) => {
-    setItems((prev) => prev.filter((item) => item.id !== id));
+  const removeFromCart = (id: number, size?: string, color?: string) => {
+    setItems((prev) =>
+      prev.filter(
+        (item) =>
+          !(item.id === id && item.size === size && item.color === color),
+      ),
+    );
   };
 
   const cartCount = items.reduce((acc, item) => acc + item.quantity, 0);

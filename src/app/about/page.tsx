@@ -59,7 +59,7 @@ export default function About() {
                 <div className="space-y-4 font-mono text-sm">
                   <div className="flex justify-between border-b border-black-solid border-opacity-20 pb-2">
                     <span>ESTABLISHED</span>
-                    <span>2026</span>
+                    <span>2025</span>
                   </div>
                   <div className="flex justify-between border-b border-black-solid border-opacity-20 pb-2">
                     <span>ORIGIN</span>
