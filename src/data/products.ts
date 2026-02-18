@@ -13,7 +13,7 @@ export const products: Product[] = [
         id: 1,
         title: "ESSENTIAL TEE / BLACK",
         price: 45000,
-        image: "/images/Snapchat-1960843956.jpg",
+        image: "/images/Snapchat-1413769622.jpg",
         description: "Heavyweight cotton jersey. Boxy fit. Dropped shoulders. The essential foundation for any wardrobe.",
         colors: ["Black", "White", "Concrete"],
         sizes: ["S", "M", "L", "XL"],

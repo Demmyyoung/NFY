@@ -28,24 +28,22 @@ export function LoadingOverlay({ onComplete }: { onComplete: () => void }) {
           transition={{ duration: 0.5, ease: "easeOut" }} // Phase 3
         >
           <motion.div
-            className="bg-white-pure border border-black-solid px-10 py-4"
+            className="w-[500px] h-40 relative px-4"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{
               duration: 0.8,
               type: "spring",
-              bounce: 0, // "smooth spring", bounce might be too bouncy, use 0 or low stiffness
+              bounce: 0,
             }}
           >
-            <div className="relative w-48 h-16">
-              <Image
-                src="/images/logo1.jpg"
-                alt="nyf"
-                fill
-                className="object-fill"
-                priority
-              />
-            </div>
+            <Image
+              src="/images/nfy_new_logo.png"
+              alt="nyf"
+              fill
+              className="object-contain"
+              priority
+            />
           </motion.div>
         </motion.div>
       )}

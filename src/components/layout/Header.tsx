@@ -16,14 +16,14 @@ export function Header() {
         {/* Spacer for centering logic */}
         <div className="w-6 md:hidden"></div>
 
-        {/* Center Logo Box */}
-        <div className="bg-white-pure border border-black-solid px-6 py-2 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-          <Link href="/" className="block relative w-24 h-8 cursor-pointer">
+        {/* Center Logo */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <Link href="/" className="block relative w-64 h-16 cursor-pointer">
             <Image
-              src="/images/logo1.jpg"
+              src="/images/nfy_new_logo.png"
               alt="nyf"
               fill
-              className="object-fill"
+              className="object-contain"
               priority
             />
           </Link>

@@ -30,28 +30,14 @@ export function ProductGrid() {
             aria-label={`View ${product.title}`}
           />
 
-          {/* Add to Cart Overlay Button */}
-          <button
-            onClick={(e) => {
-              e.stopPropagation(); // Prevent navigation when clicking add to cart
-              addToCart({
-                id: product.id,
-                name: product.title,
-                price: product.price.toString(), // CartContext might expect string based on previous usage, but we'll verify.
-                // Wait, let's verify CartContext first. If it expects a different shape, we'll fix it.
-                // For now assuming existing CartContext structure.
-                // Actually, looking at the previous file content, it passed `product` directly which had {id, name, price: string}.
-                // My new product has {id, title, price: number}.
-                // I should probably map it to what CartContext expects or update CartContext.
-                // Let's assume for now I need to map it.
-                image: product.image,
-              });
-            }}
+          {/* View Product Button (replaces quick add to cart) */}
+          <Link
+            href={`/product/${product.id}`}
             className="absolute top-4 right-4 p-2 border border-black-solid bg-white-pure opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity hover:bg-black-solid hover:text-white-pure z-10 cursor-pointer"
-            aria-label="Add to cart"
+            aria-label="View product"
           >
             <Plus strokeWidth={1} className="w-6 h-6" />
-          </button>
+          </Link>
 
           <div className="flex-1 flex items-center justify-center mb-6 pointer-events-none">
             <div className="relative w-full aspect-[3/4] bg-white-pure border border-black-solid flex items-center justify-center overflow-hidden">
