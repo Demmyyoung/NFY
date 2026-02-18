@@ -20,8 +20,9 @@ export default function About() {
 
                 <div className="space-y-8 text-lg leading-relaxed tracking-wide lowercase">
                   <p>
-                    nyf is a conceptual exploration of brutalism in digital
-                    commerce. stripped of excess. defined by raw structure.
+                    nfy.archive is a conceptual exploration of brutalism in
+                    digital commerce. stripped of excess. defined by raw
+                    structure.
                   </p>
                   <p>
                     we believe in the beauty of the wireframe. the skeleton is

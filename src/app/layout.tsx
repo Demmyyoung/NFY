@@ -11,7 +11,7 @@ const orbitron = Orbitron({
 });
 
 export const metadata: Metadata = {
-  title: "nyf",
+  title: "nfy.archive",
   description: "Brutalist Wireframe E-commerce",
   icons: {
     icon: "/icon.jpg",

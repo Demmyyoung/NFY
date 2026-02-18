@@ -39,7 +39,7 @@ export function LoadingOverlay({ onComplete }: { onComplete: () => void }) {
           >
             <Image
               src="/images/nfy_new_logo.png"
-              alt="nyf"
+              alt="nfy.archive"
               fill
               className="object-contain"
               priority

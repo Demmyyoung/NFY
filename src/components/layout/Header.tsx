@@ -21,7 +21,7 @@ export function Header() {
           <Link href="/" className="block relative w-64 h-16 cursor-pointer">
             <Image
               src="/images/nfy_new_logo.png"
-              alt="nyf"
+              alt="nfy.archive"
               fill
               className="object-contain"
               priority
